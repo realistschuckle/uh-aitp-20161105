@@ -5,21 +5,95 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/sky.css">
     <link rel="stylesheet" href="css/theme/vs.css">
+    <link rel="stylesheet" href="css/presentation.css">
   </head>
   <body>
     <div class="reveal">
         <div class="slides">
-            <section>
-              Under construction... :-(
-              <pre><code data-trim data-noescape>
-(def lazy-fib
-  (concat
-   [0 1]
-   <mark>((fn rfib [a b]</mark>
-        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-              </code></pre>
-            </section>
-        </div>
+	    <section>
+		<p>
+		    Use the left and right arrows to navigate this presentation.
+		    Or, click the little arrows in the lower-right corner.
+		</p>
+	    </section>
+	    <section>
+		<h2>The All-Powerful</h2>
+		<h1>{</h1>
+		<p>And, it's sibling, }</p>
+	    </section>
+	    <section>
+		<h1>Curly braces...</h1>
+		<h2>
+		    Group related statements together.
+		</h2>
+		<p>
+		    The curly braces belong to the code immediately proceeding
+		    them.
+		</p>
+	    </section>
+	    <section>
+		<p>
+		    Here, the curly braces belong to the
+		    <code class="hljs-keyword">if</code> statement. Everything
+		    inside the open and close curly braces will only run if the
+		    condition for the <code class="hljs-keyword">if</code>
+		    statement evaluates to
+		    <code class="hljs-keyword">true</code>
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+if (someNumber < 10)
+{
+    // All of these statements will only run
+    // if "someNumber" is less than 10.
+    Console.WriteLine("Yes, you have less than 10.");
+    Console.WriteLine("Don't worry. That's more than most.");
+}
+</code></pre>
+	    </section>
+	    <section>
+		<p>
+		    Here, the curly braces belong to the
+		    <code class="hljs-keyword">namespace</code>. Everything
+		    inside the <code class="hljs-keyword">namespace</code>'s
+		    curly braces belong to the namespace. In this case, the
+		    <code class="hljs-title">MyAwesomeClass</code> definition will
+		    exist in the
+		    <code class="hljs-title">My.Awesome.Program</code>
+		    <code class="hljs-keyword">namespace</code>.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+namespace My.Awesome.Program
+{
+    public class MyAwesomeClass
+    {
+        // Some awesome class stuff in here
+    }
+}
+</code></pre>
+	    </section>
+	    <section>
+		<p>
+		    Here, the curly braces belong to the
+		    method <code class="hljs-title">Main</code>. All of the
+		    statements inside the curly braces will execute when some
+		    other code executes the <code class="hljs-title">Main</code>
+		    method.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+public static void Main(string[] args)
+{
+    Pizza myPizza = new Pizza("large", "new york");
+    Console.WriteLine("Your pizza will cost: " + myPizza.Cost);
+}
+</code></pre>
+		<p>
+		    In this code, when some other code runs
+		    <code class="hljs-title">Main</code>, then a new
+		    <code class="hljs-title">Pizza</code> gets created and we
+		    print its cost.
+		</p>
+	    </section>
+	</div>
     </div>
     <script src="js/head.min.js"></script>
     <script src="js/reveal.js"></script>
