@@ -6,8 +6,8 @@ of Houston chapter.
 
 # To view the presentation (easy mode)
 
-You can click [here](https://realistschuckle.github.io/uh-aitp-20161105) to
-check out the presentation.
+You can click [here](http://curtis.schlak.com/uh-aitp-20161105/index.html)
+to check out the presentation.
 
 # To view the presentation (slighlty less easy mode)
 
