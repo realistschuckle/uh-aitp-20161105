@@ -1,3 +1,33 @@
 .reveal pre {
     font-size: 0.75em;
 }
+.reveal pre code {
+    max-height: 450px;
+}
+.narrow {
+    width: 50%;
+}
+.two-column {
+    display: flex;
+}
+.two-column pre {
+    flex: 1 0 0px;
+    font-size: 0.65em;
+}
+.two-column pre code {
+    height: 100%;
+}
+.reveal .slides section .fragment.breakpoint {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(255, 255, 0, 0);
+}
+.reveal .slides section .fragment.breakpoint.current-fragment {
+    background-color: rgba(255, 255, 0, 1);
+}
+.whats-happening {
+    display: none !important;
+}
+.whats-happening.current {
+    display: block !important;
+}

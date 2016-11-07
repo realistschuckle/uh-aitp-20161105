@@ -23,9 +23,7 @@
 	    </section>
 	    <section>
 		<h1>Curly braces...</h1>
-		<h2>
-		    Group related statements together.
-		</h2>
+		<h2>Group related statements together.</h2>
 		<p>
 		    The curly braces belong to the code immediately proceeding
 		    them.
@@ -52,14 +50,16 @@ if (someNumber < 10)
 	    </section>
 	    <section>
 		<p>
-		    Here, the curly braces belong to the
+		    Here, the left-most curly braces belong to the
 		    <code class="hljs-keyword">namespace</code>. Everything
 		    inside the <code class="hljs-keyword">namespace</code>'s
 		    curly braces belong to the namespace. In this case, the
 		    <code class="hljs-title">MyAwesomeClass</code> definition will
 		    exist in the
 		    <code class="hljs-title">My.Awesome.Program</code>
-		    <code class="hljs-keyword">namespace</code>.
+		    <code class="hljs-keyword">namespace</code>. Anything in the
+		    curly braces for <code class="hljs-keyword">MyAwesomeClass</code>
+		    will belong to the class.
 		</p>
 <pre><code data-trim data-noescape class="csharp">
 namespace My.Awesome.Program
@@ -92,6 +92,357 @@ public static void Main(string[] args)
 		    <code class="hljs-title">Pizza</code> gets created and we
 		    print its cost.
 		</p>
+	    </section>
+	    <section>
+		<h2>The Last Word</h2>
+		<h1>;</h1>
+	    </section>
+	    <section>
+		<h1>Semicolons...</h1>
+		<h2>End Statements</h2>
+		<p>
+		    A statement is a declaration, an assignment, a calculation,
+		    or method call.
+		</p>
+	    </section>
+	    <section>
+		<p>
+		    A variable is a type and a name. We declare variables so the
+		    program knows that we'll want to use them. Declarations end
+		    with a semicolon.
+		</p>
+		<p>
+		    The highlighted code declares a variable with the type of
+		    <code class="hljs-keyword">string</code> and with a name of
+		    <code>myName</code>.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+public static void Main(string[] args)
+{
+    <mark>string myName;</mark>
+
+    Console.WriteLine("What is your name?");
+    myName = Console.ReadLine();
+    Console.WriteLine("Hello, " + myName);
+}
+</code></pre>		
+	    </section>
+	    <section>
+		<p>
+		    We use the assignment operator <code>=</code> to assign a
+		    value to a variable. Assignments end with a semicolon.
+		</p>
+		<p>
+		    The highlighted code shows an assignment of the
+		    <code>myName</code> variable with the value read from the
+		    input of the console. The statement ends with a semicolon.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+public static void Main(string[] args)
+{
+    string myName;
+
+    Console.WriteLine("What is your name?");
+    <mark>myName = Console.ReadLine();</mark>
+    Console.WriteLine("Hello, " + myName);
+}
+</code></pre>
+	    </section>
+	    <section>
+		<p>
+		    When we call methods outside of a decision point, those end
+		    in a semicolon, too.
+		</p>
+		<p>
+		    Note that the method call
+		    <code class="hljs-title">WriteLine</code> ends in a
+		    semicolon.
+		</p>
+		<p>
+		    Note that the method call in the
+		    <code class="hljs-keyword">if</code> does not end in a
+		    semicolon because it's part of the decision process and not
+		    a statement all by itself.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+double myAge = Birthday.CalculateAge(myBirthday)<mark>;</mark>
+
+if (mySupervisor.IsHappyWithMyPerformance()) // no semicolon
+{
+    Purchase purchase = onlineStore.BuyWhiskey()<mark>;</mark>
+    purchase.ShipTo(mySupervisor)<mark>;</mark>
+}
+</code></pre>
+	    </section>
+	    <section>
+		<h1>Methods</h1>
+		<h2>Little units of behavior</h2>
+		<p>(Be on your best behavior!)</p>
+	    </section>
+	    <section>
+		<h1>Declaring a method</h1>
+<pre><code data-noescape class="csharp">public double CalculateAge(DateTime birthday)
+  1.     2.        3.            4.
+</code></pre>
+		<ol class="narrow">
+		    <li>A visibility indicator</li>
+		    <li>A return type</li>
+		    <li>A name</li>
+		    <li>
+			A list of variables that allow you to give the method
+			more information needed to process.
+		    </li>
+		</ol>
+	    </section>
+	    <section>
+		<h1>Classes</h1>
+		<h2>Bundles of behavior</h2>
+		<p>
+		    (Oh, and data. Don't forget data. But, behavior is more
+		    important.)
+		</p>
+	    </section>
+	    <section>
+		<h1>Declaring a class</h1>
+<pre><code data-trim data-noescape class="csharp">
+public class Pizza
+{
+    // Some (private!) data fields
+    // A constructor or two
+    // Some methods that change the data in the object
+    // Some properties that get and/or set data in the object
+}
+</code></pre>
+	    </section>
+	    <section>
+		<h2>Fields in a class</h2>
+		<p>
+		    We usually make variables for an object have
+		    <code class="hljs-keyword">private</code> so that
+		    code from outside of the object can't mess around
+		    with the values of the data.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+public class Pizza
+{
+    private decimal cost;
+    private int numberOfToppings;
+}
+</code></pre>
+	    </section>
+	    <section>
+		<h2>Constructors</h2>
+		<p>
+		    A constructor is a special method run when code
+		    creates a <code class="hljs-keyword">new</code> instance
+		    of the <code class="hljs-keyword">class</code>. It has
+		    <strong>no return type</strong> and <strong>the same
+		    name as the class.</strong>
+		</p>
+		<p>
+		    Normally <code class="hljs-keyword">public</code>, we
+		    want outside code to create new instances.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+public class Pizza
+{
+    public Pizza(string size)
+    {
+        if (size == "medium")
+        {
+            cost = 8.50m;
+        }
+        else
+        {
+            cost = 14.50m;
+        }
+    }
+}
+</code></pre>
+	    </section>
+	    <section>
+		<h2>Methods</h2>
+		<p>
+		    Methods of a class exist to change the value of the
+		    <code class="hljs-keyword">private</code> data in the object
+		    and to report information about the state of the object.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+public class Pizza
+{
+    public void AddTopping(string topping)
+    {
+        numberOfToppings += 1;
+        if (numberOfToppings > 3)
+        {
+            cost += 0.25m
+        }
+        else
+        {
+            cost += 1.00m;
+        }
+    }
+}
+</code></pre>
+	    </section>
+	    <section>
+		<h2>Properties</h2>
+		<p>
+		    Properties of a class act as a line of defense against
+		    outside code changing the data of a
+		    <code class="hljs-keyword">private</code> variable in the
+		    object.
+		</p>
+		<p>
+		    Using a <code class="hljs-keyword">get</code>ter in
+		    the property allows an object to hand back the value of a
+		    <code class="hljs-keyword">private</code> variable without
+		    allowing <code class="hljs-keyword">public</code> access.
+		</p>
+		<p>
+		    Using a <code class="hljs-keyword">set</code>ter in the
+		    proeprty allows for data validation before actually setting
+		    the value of <code class="hljs-keyword">private</code> data.
+		</p>
+<pre><code data-trim data-noescape class="csharp">
+public class Pizza
+{
+    public decimal Cost
+    {
+        get { return cost; }
+    }
+}
+</code></pre>
+	    </section>
+	    <section>
+		<h1>Example Program</h1>
+		<p>
+		    Let's just step through a program that, by example, would
+		    run the code that we've seen "developed" in the examples of
+		    these slides.
+		</p>
+	    </section>
+	    <section>
+		<p class="whats-happening current">let's step through some code...</p>
+		<p id="step-0" class="whats-happening">the computer program starts with <code class="hljs-title">Main</code></p>
+		<p id="step-1" class="whats-happening">call <code class="hljs-keyword">new</code> on <code class="hljs-title">Pizza</code> for a "large" pizza</p>
+		<p id="step-2" class="whats-happening">enter the constructor of <code class="hljs-title">Pizza</code></p>
+		<p id="step-3" class="whats-happening">compare the <code>size</code> to <code>"medium"</code></p>
+		<p id="step-4" class="whats-happening">go to the <code class="hljs-keyword">else</code></p>
+		<p id="step-5" class="whats-happening">enter the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-6" class="whats-happening">set the <code>cost</code> to $14.50</p>
+		<p id="step-7" class="whats-happening">end the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-8" class="whats-happening">end the constructor block</p>
+		<p id="step-9" class="whats-happening">set the <code>myPizza</code> variable to the <code class="hljs-title">Pizza</code> object</p>
+		<p id="step-10" class="whats-happening">invoke the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-11" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-12" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> block</p>
+		<p id="step-13" class="whats-happening">increment the number of toppings on the pizza</p>
+		<p id="step-14" class="whats-happening">the number of toppings is less than 3</p>
+		<p id="step-15" class="whats-happening">so, we do the <code class="hljs-keyword">else</code></p>
+		<p id="step-16" class="whats-happening">and enter the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-17" class="whats-happening">and add a dollar to the cost</p>
+		<p id="step-18" class="whats-happening">finish the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-19" class="whats-happening">finish the method block</p>
+		<p id="step-20" class="whats-happening">invoke the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-21" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-22" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> block</p>
+		<p id="step-23" class="whats-happening">increment the number of toppings on the pizza</p>
+		<p id="step-24" class="whats-happening">the number of toppings is less than 3</p>
+		<p id="step-25" class="whats-happening">so, we do the <code class="hljs-keyword">else</code></p>
+		<p id="step-26" class="whats-happening">and enter the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-27" class="whats-happening">and add a dollar to the cost</p>
+		<p id="step-28" class="whats-happening">finish the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-29" class="whats-happening">finish the method block</p>
+		<p id="step-30" class="whats-happening">invoke the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-31" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-32" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> block</p>
+		<p id="step-33" class="whats-happening">increment the number of toppings on the pizza</p>
+		<p id="step-34" class="whats-happening">the number of toppings is less than 3</p>
+		<p id="step-35" class="whats-happening">so, we do the <code class="hljs-keyword">else</code></p>
+		<p id="step-36" class="whats-happening">and enter the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-37" class="whats-happening">and add a dollar to the cost</p>
+		<p id="step-38" class="whats-happening">finish the <code class="hljs-keyword">else</code> block</p>
+		<p id="step-39" class="whats-happening">finish the method block</p>
+		<p id="step-40" class="whats-happening">invoke the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-41" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> method</p>
+		<p id="step-42" class="whats-happening">enter the <code class="hljs-title">AddTopping</code> block</p>
+		<p id="step-43" class="whats-happening">increment the number of toppings on the pizza</p>
+		<p id="step-44" class="whats-happening">the number of toppings is equal to 3</p>
+		<p id="step-45" class="whats-happening">so, we do the <code class="hljs-keyword">if</code> block</p>
+		<p id="step-46" class="whats-happening">and add $0.25 to the cost</p>
+		<p id="step-47" class="whats-happening">finish the <code class="hljs-keyword">if</code> block</p>
+		<p id="step-48" class="whats-happening">finish the method block</p>
+		<p id="step-49" class="whats-happening">get the <code class="hljs-title">Cost</code> of the pizza</p>
+		<p id="step-50" class="whats-happening">enter the <code class="hljs-title">Cost</code> property</p>
+		<p id="step-51" class="whats-happening">return the <code class="hljs-keyword">get</code> portion of the property</p>
+		<p id="step-52" class="whats-happening"><code class="hljs-title">WriteLine</code> the value</p>
+		<p id="step-53" class="whats-happening">end the <code class="hljs-title">Main</code> method block</p>
+		<div class="two-column">
+<pre><code data-trim data-noescape class="csharp">
+// Program.cs
+class Program
+{
+    <mark class="fragment breakpoint" data-fragment-index="0">public static void Main(string[] args)</mark>
+    {
+        <mark class="fragment breakpoint" data-fragment-index="9">Pizza myPizza</mark> = <mark class="fragment breakpoint" data-fragment-index="1">new Pizza("large")</mark>;
+        <mark class="fragment breakpoint" data-fragment-index="10">myPizza.AddTopping();</mark>
+        <mark class="fragment breakpoint" data-fragment-index="20">myPizza.AddTopping();</mark>
+        <mark class="fragment breakpoint" data-fragment-index="30">myPizza.AddTopping();</mark>
+        <mark class="fragment breakpoint" data-fragment-index="40">myPizza.AddTopping();</mark>
+        <mark class="fragment breakpoint" data-fragment-index="52">Console.WriteLine(<mark class="fragment breakpoint" data-fragment-index="49">myPizza.Cost</mark>);</mark>
+    <mark class="fragment breakpoint" data-fragment-index="53">}</mark>
+}
+</code></pre>
+<pre><code data-trim data-noescape class="csharp">
+// Pizza.cs
+public class Pizza
+{
+    private decimal cost;
+    private int numberOfToppings;
+
+    <mark class="fragment breakpoint" data-fragment-index="2">public Pizza(string size)</mark>
+    {
+        <mark class="fragment breakpoint" data-fragment-index="3">if (size == "medium")</mark>
+        {
+            cost = 8.50m;
+        }
+        <mark class="fragment breakpoint" data-fragment-index="4">else</mark>
+        <mark class="fragment breakpoint" data-fragment-index="5">{</mark>
+            <mark class="fragment breakpoint" data-fragment-index="6">cost = 14.50m;</mark>
+        <mark class="fragment breakpoint" data-fragment-index="7">}</mark>
+    <mark class="fragment breakpoint" data-fragment-index="8">}</mark>
+
+    <mark class="fragment breakpoint" data-fragment-index="41"><mark class="fragment breakpoint" data-fragment-index="31"><mark class="fragment breakpoint" data-fragment-index="21"><mark class="fragment breakpoint" data-fragment-index="11">public void AddTopping(string topping)</mark></mark></mark></mark>
+    <mark class="fragment breakpoint" data-fragment-index="42"><mark class="fragment breakpoint" data-fragment-index="32"><mark class="fragment breakpoint" data-fragment-index="22"><mark class="fragment breakpoint" data-fragment-index="12">{</mark></mark></mark></mark>
+        <mark class="fragment breakpoint" data-fragment-index="43"><mark class="fragment breakpoint" data-fragment-index="33"><mark class="fragment breakpoint" data-fragment-index="23"><mark class="fragment breakpoint" data-fragment-index="13">numberOfToppings += 1;</mark></mark></mark></mark>
+        <mark class="fragment breakpoint" data-fragment-index="44"><mark class="fragment breakpoint" data-fragment-index="34"><mark class="fragment breakpoint" data-fragment-index="24"><mark class="fragment breakpoint" data-fragment-index="14">if (numberOfToppings > 3)</mark></mark></mark></mark>
+        <mark class="fragment breakpoint" data-fragment-index="45">{</mark>
+            <mark class="fragment breakpoint" data-fragment-index="46">cost += 0.25m</mark>
+        <mark class="fragment breakpoint" data-fragment-index="47">}</mark>
+        <mark class="fragment breakpoint" data-fragment-index="35"><mark class="fragment breakpoint" data-fragment-index="25"><mark class="fragment breakpoint" data-fragment-index="15">else</mark></mark></mark>
+        <mark class="fragment breakpoint" data-fragment-index="36"><mark class="fragment breakpoint" data-fragment-index="26"><mark class="fragment breakpoint" data-fragment-index="16">{</mark></mark></mark>
+           <mark class="fragment breakpoint" data-fragment-index="37"><mark class="fragment breakpoint" data-fragment-index="27"><mark class="fragment breakpoint" data-fragment-index="17">cost += 1.00m;</mark></mark></mark>
+        <mark class="fragment breakpoint" data-fragment-index="38"><mark class="fragment breakpoint" data-fragment-index="28"><mark class="fragment breakpoint" data-fragment-index="18">}</mark></mark></mark>
+    <mark class="fragment breakpoint" data-fragment-index="48"><mark class="fragment breakpoint" data-fragment-index="39"><mark class="fragment breakpoint" data-fragment-index="29"><mark class="fragment breakpoint" data-fragment-index="19">}</mark></mark></mark></mark>
+
+    <mark class="fragment breakpoint" data-fragment-index="50">public decimal Cost</mark>
+    {
+        get { <mark class="fragment breakpoint" data-fragment-index="51">return cost;</mark> }
+    }
+}
+</code></pre>
+		</div>
+	    </section>
+	    <section>
+		<h1>And, that's C#</h1>
+		<p>
+		    For more learning opportunities, I recommend any of the following:
+		</p>
+		<ul>
+		    <li><a href="https://mva.microsoft.com/en-us/training-courses/c-fundamentals-for-absolute-beginners-16169">Microsoft Virtual Academy: C# Fundamentals for Absolute Beginners</a></li>
+		    <li><a href="https://www.udemy.com/programming-for-complete-beginners-in-csharp/">Udemy: Programming for Complete Beginners in C#</a></li>
+		</ul>
 	    </section>
 	</div>
     </div>
