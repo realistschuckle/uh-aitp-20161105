@@ -301,7 +301,7 @@ public class Pizza
 		</p>
 		<p>
 		    Using a <code class="hljs-keyword">set</code>ter in the
-		    proeprty allows for data validation before actually setting
+		    property allows for data validation before actually setting
 		    the value of <code class="hljs-keyword">private</code> data.
 		</p>
 <pre><code data-trim data-noescape class="csharp">
@@ -386,10 +386,10 @@ class Program
     <mark class="fragment breakpoint" data-fragment-index="0">public static void Main(string[] args)</mark>
     {
         <mark class="fragment breakpoint" data-fragment-index="9">Pizza myPizza</mark> = <mark class="fragment breakpoint" data-fragment-index="1">new Pizza("large")</mark>;
-        <mark class="fragment breakpoint" data-fragment-index="10">myPizza.AddTopping();</mark>
-        <mark class="fragment breakpoint" data-fragment-index="20">myPizza.AddTopping();</mark>
-        <mark class="fragment breakpoint" data-fragment-index="30">myPizza.AddTopping();</mark>
-        <mark class="fragment breakpoint" data-fragment-index="40">myPizza.AddTopping();</mark>
+        <mark class="fragment breakpoint" data-fragment-index="10">myPizza.AddTopping("pepperoni");</mark>
+        <mark class="fragment breakpoint" data-fragment-index="20">myPizza.AddTopping("mushrooms");</mark>
+        <mark class="fragment breakpoint" data-fragment-index="30">myPizza.AddTopping("black olives");</mark>
+        <mark class="fragment breakpoint" data-fragment-index="40">myPizza.AddTopping("pineapple");</mark>
         <mark class="fragment breakpoint" data-fragment-index="52">Console.WriteLine(<mark class="fragment breakpoint" data-fragment-index="49">myPizza.Cost</mark>);</mark>
     <mark class="fragment breakpoint" data-fragment-index="53">}</mark>
 }
